@@ -47,7 +47,7 @@ export default function Role({
       icons={iconPath.map((icon, index) => (
         <Image
           key={index}
-          className='mb-1 mr-1 inline-flex h-4 w-4'
+          className='mb-1 mr-1 inline-flex !h-4 !w-4'
           alt={roleName || 'Role'}
           width={24}
           height={24}

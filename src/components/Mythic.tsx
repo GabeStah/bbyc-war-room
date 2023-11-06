@@ -19,7 +19,7 @@ export default ({
           key='camera'
           className={twMerge(
             'mb-1 mr-1 inline-flex',
-            full ? 'h-6 w-6' : 'h-4 w-4'
+            full ? '!h-6 !w-6' : '!h-4 !w-4'
           )}
         />
       ]}

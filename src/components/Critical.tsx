@@ -7,7 +7,7 @@ export default ({ color = TailwindColor.red }: { color?: TailwindColor }) => {
   return (
     <Tooltip title='This is a critical mechanic.' placement='top'>
       <Badge
-        icons={[<Error key={0} className='mb-1 mr-1 inline-flex h-4 w-4' />]}
+        icons={[<Error key={0} className='mb-1 mr-1 inline-flex !h-4 !w-4' />]}
         color={color}
         text={'Critical'}
       />

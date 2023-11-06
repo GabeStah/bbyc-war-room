@@ -11,7 +11,7 @@ export default ({
   return (
     <Tooltip title='Add this to your boss mods countdown.' placement='top'>
       <Badge
-        icons={[<Alarm key={0} className='mb-1 mr-1 inline-flex h-4 w-4' />]}
+        icons={[<Alarm key={0} className='mb-1 mr-1 inline-flex !h-4 !w-4' />]}
         color={color}
         text={'Countdown'}
       />
