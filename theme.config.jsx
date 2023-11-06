@@ -6,6 +6,7 @@ import Class from './src/components/Class';
 import Mythic from './src/components/Mythic';
 import Tactic from './src/components/Tactic';
 import Tip from './src/components/Tip';
+import Image from 'next/image';
 
 /** @type {import('nextra').ThemeConfig} */
 const themeConfig = {
@@ -23,9 +24,27 @@ const themeConfig = {
     link: 'https://discord.gg/7vnEG7anv'
   },
   docsRepositoryBase: 'https://github.com/gabestah/bbyc-war-room/tree/main',
-  logo: <span>BBYC War Room</span>,
+  logo: (
+    <>
+      <Image
+        src='/assets/images/logo.png'
+        alt='BBYC War Room'
+        width={40}
+        height={40}
+      />
+      <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
+        My Cool Project
+      </span>
+    </>
+  ),
   project: {
     link: 'https://github.com/gabestah/bbyc-war-room'
+  },
+  useNextSeoProps() {
+    return {
+      description: 'BBYC strategies for World of Warcraft',
+      titleTemplate: '%s – BBYC War Room'
+    };
   }
   // ... other theme options
 };
