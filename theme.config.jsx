@@ -29,12 +29,10 @@ const themeConfig = {
       <Image
         src='/assets/images/logo.png'
         alt='BBYC War Room'
-        width={40}
-        height={40}
+        width={54}
+        height={54}
       />
-      <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
-        My Cool Project
-      </span>
+      <span className='ml-2 text-2xl font-bold'>BBYC War Room</span>
     </>
   ),
   project: {
