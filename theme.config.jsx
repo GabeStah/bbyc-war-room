@@ -22,7 +22,7 @@ const themeConfig = {
   chat: {
     link: 'https://discord.gg/7vnEG7anv'
   },
-  docsRepositoryBase: 'https://github.com/gabestah/bbyc-war-room',
+  docsRepositoryBase: 'https://github.com/gabestah/bbyc-war-room/tree/main',
   logo: <span>BBYC War Room</span>,
   project: {
     link: 'https://war-room.bbyc.dev'
