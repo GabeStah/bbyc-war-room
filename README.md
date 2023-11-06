@@ -14,5 +14,8 @@ If you want to quickly get started creating or editing a document, doing so remo
    > The majority of the file should be [written in Markdown](https://www.markdownguide.org/). However, you can also use JSX to add components to the page.
 
 1. Once you're done, press `Ctrl+S` to save your changes.
+1. Press `Ctrl+Shift+P` to open the command palette.
+1. Enter "create branch" and select `Remote Repositories: Create Branch From...`.
+1. In the new dialog, enter a short name that describes what you changed (e.g. "add-about-page") then press `Enter`.
 1. Press `Ctrl+Shift+G` to open the source control sidebar.
 1. Enter a brief message describing your changes then select "Commit & Push."
