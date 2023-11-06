@@ -25,7 +25,7 @@ const themeConfig = {
   docsRepositoryBase: 'https://github.com/gabestah/bbyc-war-room/tree/main',
   logo: <span>BBYC War Room</span>,
   project: {
-    link: 'https://war-room.bbyc.dev'
+    link: 'https://github.com/gabestah/bbyc-war-room'
   }
   // ... other theme options
 };
