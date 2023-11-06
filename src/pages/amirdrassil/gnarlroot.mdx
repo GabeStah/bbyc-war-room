@@ -1,0 +1,186 @@
+import { Tabs } from 'nextra/components';
+import { Callout } from 'nextra/components';
+import { Steps } from 'nextra/components';
+
+<Callout type="info">Check out [how to use this guide](/#how-to-use-this-guide) for help parsing the info on this page.</Callout>
+
+## Resources
+
+|  | Link                                                                 | Link B | Link C | Link D |
+| :------- | :------------------------------------------------------------------- | :----- | :----- | :----- |
+| Logs     | [All logs](https://www.warcraftlogs.com/zone/reports?zone=35)        | [Heroic log](https://www.warcraftlogs.com/reports/gVWC6Xpk7xfHTNqh#fight=9)        | [Heroic log](https://www.warcraftlogs.com/reports/WtMTXkYFZyHqGCbP#fight=8)        | [Mythic log](https://www.warcraftlogs.com/reports/z9JMT6LQ1AXaR8Fq#fight=9)        |
+| Videos | [Heroic guide video](https://www.youtube.com/watch?v=B8QoKhNqG78) | [Mythic testing video](https://www.youtube.com/watch?v=pVJ3Kw4-82w) | [Mythic testing video](https://www.youtube.com/watch?v=Xl-YWAjGuuM) | | 
+| Misc | [Raidplan](https://raidplan.io/plan/MG9uG8dshTIQQToV) | [Quick sheet](https://questionablyepic.com/amirdrassil-the-dreams-hope-raid/gnarlroot/) | |
+
+| Datum           | Description                                                                                   |
+| :-------------- | :-------------------------------------------------------------------------------------------- |
+| 1st potion      | ~2:10, on first [Uprooted Agony](https://www.wowhead.com/ptr-2/spell=424734/uprooted-agony) debuff (100% bonus damage burn phase)                          |
+| 2nd potion      | N/A (On @mythic, probably worth potting on pull then use 2nd ASAP after 2nd post-roots burn phase) |
+| Lust            | ~2:10: On first [Uprooted Agony](https://www.wowhead.com/ptr-2/spell=424734/uprooted-agony) debuff                                                         |
+| Big heals       | During 20-sec [Uprooted Agony](https://www.wowhead.com/ptr-2/spell=424734/uprooted-agony) period, high raid-wide AoE |
+| Utility talents | AoE stun, speed boosts                                                                        |
+
+## Overview
+
+Gnarlroot is a 2-phase fight with a 20-second intermission high healing and high damage burn period at the end of each Phase 2.
+
+- Phase 1, the boss spawns lines of swirls with dormant adds in the four cardinal directions from his facing. The raid must drop puddles that cover those dormant adds to activate them over the course of the phase.
+- Phase 2, the boss takes 99% reduced damage and spawns 4 sets of roots. The raid must soak small puddles that deal DoT damage but allow you to burn away the roots by touching them.
+- Once all roots are destroyed, the burn period begins.
+
+<Callout>
+  Multiple adds will spawn throughout the fight, but the main focus should be
+  single-target damage.
+</Callout>
+
+## Key mechanics
+
+- Tanks swap for every [Dreadfire Barrage](https://www.wowhead.com/ptr-2/spell=424366/dreadfire-barrage) and use magic-based CDs.
+- [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) - 4 lines of swirlies in cardinal directions from boss. Dormant **Tainted Lashers** spawn from some swirls.
+  - @tactic Tanks must keep the boss centered and facing a cardinal direction swirl line directions. Tanks are advised to set a @countdown.
+- @critical @countdown [Controlled Burn](https://www.wowhead.com/ptr-2/spell=421971/controlled-burn) - 4 random non-tank players (one healer and three DPS) get debuffed. After 6 seconds, the debuff expires and leaves a [Shadow-Scorched Earth](https://www.wowhead.com/ptr-2/spell=422023/shadow-scorched-earth) puddle that lasts for the rest of the phase.
+  - @tactic If afflicted, you must run to the assigned **OUTERMOST** raid marker position to drop your puddle. See [Phase 1](#phase-1) for more details.
+- Every ~30 seconds (three times per phase), the boss faces a random non-tank player and casts the conal [Shadowflame Cleave](https://www.wowhead.com/ptr-2/spell=422039/shadowflame-cleave).
+- At the start of Phase 2, the boss spawns 4 sets of **Doom Roots** in the four cardinal directions around him.
+  - @tactic 2-3 non-tank players must soak the [Splintering Charcoal](https://www.wowhead.com/ptr-2/spell=421427/splintering-charcoal) swirls and quickly run along the roots to burn them.  You have 10 seconds and can clear up to 5 root sections per soak.
+- @critical At the end of Phase 2, the boss takes 100% additional damage and deals massive raid-wide AoE damage for 20 seconds.
+  - @tactic
+    - DPS: Save personal CDs and bloodlust for this burn period.
+    - Healers: Coordinate raid CDs for this AoE damage period.
+
+## Details
+
+### Phase 1
+
+<Tabs items={['Swirls, adds, and puddles', 'Tanks & boss positioning']}>
+  <Tabs.Tab>
+    Twice per phase, [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) cast spawns 4 lines of swirlies in cardinal directions from the boss. Dormant **Tainted Lashers** spawn from some swirls.
+
+    ![](/assets/images/amirdrassil/gnarlroot/1.png)
+
+    - Twice per phase, [Controlled Burn](https://www.wowhead.com/ptr-2/spell=421971/controlled-burn) debuffs 4 random non-tank players (one healer and three DPS). After 6 seconds, the debuff expires and leaves a [Shadow-Scorched Earth](https://www.wowhead.com/ptr-2/spell=422023/shadow-scorched-earth) puddle that lasts for the rest of the phase.
+    - Any dormant **Tainted Lashers** inside a [Shadow-Scorched Earth](https://www.wowhead.com/ptr-2/spell=422023/shadow-scorched-earth) puddle will activate, deal minor [raid-wide AoE damage](https://www.wowhead.com/ptr-2/spell=421986/tainted-bloom), and start casting a stacking [Shadow Spines](https://www.wowhead.com/ptr-2/spell=422464/shadow-spines) DoT on random players.
+      - @tactic **Tainted Lashers** are CCable and should be grouped / killed ASAP.
+    - Every ~30 seconds (three times per phase), the boss faces a random non-tank player and casts the conal [Shadowflame Cleave](https://www.wowhead.com/ptr-2/spell=422039/shadowflame-cleave).
+
+    <Tactic full />
+
+    1. On the 1st set of [Controlled Burn](https://www.wowhead.com/ptr-2/spell=421971/controlled-burn), afflicted players must run to the assigned **OUTERMOST** raid marker position to drop their puddle.
+
+       ![](/assets/images/amirdrassil/gnarlroot/2.png)
+
+    1. A subset of the furthest **Tainted Lashers** will spawn and should be gathered by the tanks and killed via DPS cleave.
+    1. A second [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) swirls will spawn, but the existing outer puddles will immediately activate the outermost **Tainted Lashers**.
+    1. On the 2nd set of [Controlled Burn](https://www.wowhead.com/ptr-2/spell=421971/controlled-burn), afflicted players must run to the assigned **INNERMOST** raid marker position to drop their puddle.
+
+       ![](/assets/images/amirdrassil/gnarlroot/3.png)
+
+    1. Again, tanks should gather while DPS kill the **Tainted Lashers**, in preparation for Phase 2.
+
+       <Callout>
+         The goal here is to maintain consistent boss facing and therefore consistent [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) line directions.  This ensures nearly all dormant **Tainted Lashers** are activated by the combination of the first and second puddle sets.
+       </Callout>
+   
+       <Callout type="error">
+         A bossmod / WeakAura will handle auto-marking [Controlled Burn](https://www.wowhead.com/ptr-2/spell=421971/controlled-burn) afflicted players, so marker positions can be automatically announced to individuals.
+   
+         However, pictured markers may need to change based on the pre-determined settings of the bossmod / WeakAura.
+       </Callout>
+   
+  </Tabs.Tab>
+  <Tabs.Tab>
+    - Boss facing and positioning is critical to maintain consistent [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) swirly line directions.
+      - @tactic Keep the boss dead center and always facing directly north or directly south before the first [Shadow-Scorched Earth](https://www.wowhead.com/ptr-2/spell=422023/shadow-scorched-earth) puddle spawns. For the 2nd set of Flaming Pestilence swirls, face the boss toward the nearest existing puddle(s).
+    - If both the tanks and the raid play well, both sets of [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) lines will spawn exactly along the four cardinal directions, and all four of those line sets will have 2 [Shadow-Scorched Earth](https://www.wowhead.com/ptr-2/spell=422023/shadow-scorched-earth) puddles along them. This ensures nearly all dormant **Tainted Lashers** are activated.
+    - Save personal CDs for [Dreadfire Barrage](https://www.wowhead.com/ptr-2/spell=424366/dreadfire-barrage) every 30 seconds and swap each cast.
+      - @tip Magic reductions such as AMS and Diffuse Magic will effectively negate the entire [Dreadfire Barrage](https://www.wowhead.com/ptr-2/spell=424366/dreadfire-barrage) cast.
+    
+    <Callout type="warning">This fight requires a lot of AoE snap threat to grab the adds, so plan accordingly.</Callout>
+  </Tabs.Tab>
+</Tabs>
+
+#### Mythic
+
+For every set of [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence), two dormant **Tainted Treants** are also spawned along with the dormant **Tainted Lashers**.
+
+- Dormant **Tainted Treants** _must_ be activated before P2 begins. Ideally, Treants are activated in each pair that they appear so the raid can properly handle and kill them before the next pair or P2 begins.
+
+  - @tactic All DPS should switch to the Treants as soon as they spawn and kill them ASAP.
+
+    <Callout type='info'>
+      Once we're comfortable with the fight, we can assign a few DPS to handle
+      the Treants while the rest of the raid focuses on the boss.
+    </Callout>
+
+- **Tainted Treants** cast [Blazing Pollen](https://www.wowhead.com/ptr-2/spell=425816/blazing-pollen), a 4-sec cast that _must_ be interrupted or it damages and disorients the 5 nearest players.
+  - @tactic 2 assigned interrupts per Treant is sufficient (one primary and one for backup).
+- **Tainted Treants** frequently cast [Flaming Sap](https://www.wowhead.com/ptr-2/spell=425819/flaming-sap) on a few random players, but it does no damage if those players are 5+ yards away from others. This debuff does apply a slow.
+  - @tactic Debuffed players should stay spread apart from others.
+
+### Phase 2
+
+After ~90 seconds in P1, the boss casts [Doom Cultivation](https://www.wowhead.com/ptr-2/spell=421013/doom-cultivation) to start P2. During this phase, the boss takes 99% reduced damage. He'll also immediately spawn 4 sets of **Doom Roots** in the four cardinal directions around him.
+
+<Callout type='warning'>
+  Tanks must immediately pick up any remaining dormant **Tainted Lashers**,
+  which all activate at the start of the phase.
+</Callout>
+
+<Tabs items={['Doom Roots']}>
+  <Tabs.Tab>
+    About 8 seconds into phase 2, a handful of small [Splintering Charcoal](https://www.wowhead.com/ptr-2/spell=421427/splintering-charcoal) swirls spawn around the room.
+    
+    - Players standing in a [Splintering Charcoal](https://www.wowhead.com/ptr-2/spell=421427/splintering-charcoal) swirl when it lands gain 5 stacks of [Ember-Charred](https://www.wowhead.com/ptr-2/spell=421038/ember-charred).  [Ember-Charred](https://www.wowhead.com/ptr-2/spell=421038/ember-charred) lasts for **10 seconds** and deals moderate damage every second.
+    - Touching a Doom Root section while afflicted with [Ember-Charred](https://www.wowhead.com/ptr-2/spell=421038/ember-charred) causes the root to burn away and removes a stack of [Ember-Charred](https://www.wowhead.com/ptr-2/spell=421038/ember-charred).
+    
+    <Tactic full />
+    
+    - 2-3 non-tank players are assigned to each Doom Root section.
+       
+       Any unassigned players *can* help if they have a sufficient personal cooldown to mitigate the DoT damage. Tanks can also help with this.
+    
+    - Players with [Ember-Charred](https://www.wowhead.com/ptr-2/spell=421038/ember-charred) should use a personal CD and run to the nearest Doom Root section to burn it away.
+    - Try to aim for conjuction points between two root branches for maximum efficiency.  Otherwise, run along the edge of the nearest unburned root section toward the next section.
+
+    <Callout>
+      _Players with movement speed abilities are ideal to traverse around the roots._
+    </Callout>
+
+  </Tabs.Tab>
+</Tabs>
+
+### Intermission
+
+When all Doom Roots are burned away Phase 2 ends and a 20-second burn period begins with the boss casting [Uprooted Agony](https://www.wowhead.com/ptr-2/spell=424734/uprooted-agony). During this period, the boss takes 100% additional damage and deals massive raid-wide AoE damage.
+
+<Tactic full />
+
+- Raid should bloodlust and use potions.
+- DPS should have 2-min CDs available if used on the pull.
+- Healers should coordinate raid CDs for this AoE damage period.
+
+<Callout>Adds should already be dead, but if any are alive the tanks should deal with them via CC and interrupts.</Callout>
+
+<Callout type="info">After [Uprooted Agony](https://www.wowhead.com/ptr-2/spell=424734/uprooted-agony) ends, the boss returns to Phase 1 and the fight repeats.</Callout>
+
+## Alternative strategies
+
+### Wall positioning
+
+This strategy involves tanking the boss against a wall, with the goal of forcing two of the four [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) swirl lines to spawn more bunched up given they're forced by the geometry of the wall.
+
+**Pros**
+
+- It's easy to cover the wall-facing swirl lines with roughly a single puddle each.  Therefore, it reduces the chance that a handful of improperly placed puddles will ruin an attempt by allowing too many dormant **Tainted Lashers** to remain deactivated prior to Phase 2.
+- Raid is more stacked up, which can be good for healers.
+
+**Cons**
+
+- @critical The raid is forced into a much smaller working area, given that puddles are going to be placed within melee distance on both sides of the boss, plus outward along the two non-wall [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) lines.
+- It's harder to maintain consistent boss facing and therefore consistent [Flaming Pestilence](https://www.wowhead.com/ptr-2/spell=421898/flaming-pestilence) line directions, since the initial puddle spawns are likely overlapping with tank positions.
+
+<Callout>
+  In my opinion, this strategy is not worth the tradeoff of a smaller working area and more difficult boss positioning.  With the center-position strategy, we can easily cover all four cardinal directions with puddles and activate most dormant adds, without stressing about running out of room or accidentally getting cleaved while avoiding puddles.
+
+  We can roughly divide the groups so each 5-man team is assigned a healer and are positioned at intercardinal spots (or just behind the boss in two packs).
+</Callout>

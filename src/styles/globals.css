@@ -2,26 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ul ul {
+  @apply !mt-1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.death-knight {
+  color: #C41F3B; /* Deep red */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.demon-hunter {
+  color: #A330C9; /* Dark magenta */
+}
+
+.druid {
+  color: #FF7D0A; /* Orange */
+}
+
+.hunter {
+  color: #ABD473; /* Light green */
+}
+
+.mage {
+  color: #69CCF0; /* Light blue */
+}
+
+.monk {
+  color: #00FF96; /* Bright green */
+}
+
+.paladin {
+  color: #F58CBA; /* Pink */
+}
+
+.priest {
+  color: #FFFFFF; /* White */
+}
+
+.rogue {
+  color: #FFF569; /* Light yellow */
+}
+
+.shaman {
+  color: #0070DE; /* Blue */
+}
+
+.warlock {
+  color: #9482C9; /* Purple */
+}
+
+.warrior {
+  color: #C79C6E; /* Tan */
+}
+
+.evoker {
+  color: #33937F; /* Teal */
 }
