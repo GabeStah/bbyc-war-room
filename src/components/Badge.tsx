@@ -25,7 +25,7 @@ export default forwardRef<HTMLSpanElement, Props>(
     return (
       <span
         className={twMerge(
-          'inline-block break-words rounded-md px-1 pr-1.5 ring-1 ring-inset',
+          'inline-block whitespace-nowrap break-words rounded-md px-1 pr-1.5 ring-1 ring-inset',
           getTailwindColorClasses(color),
           className
         )}

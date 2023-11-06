@@ -24,7 +24,8 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "tailwind-merge": "^2.0.0",
-    "unified": "^11.0.4"
+    "unified": "^11.0.4",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
