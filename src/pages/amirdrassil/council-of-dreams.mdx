@@ -1,0 +1,113 @@
+import { Tabs } from 'nextra/components';
+import { Callout } from 'nextra/components';
+import { Steps } from 'nextra/components';
+
+<Callout type="info">Check out [how to use this guide](/#how-to-use-this-guide) for help parsing the info on this page.</Callout>
+
+## Resources
+
+|  | Link                                                                 | Link B | Link C | Link D |
+| :------- | :------------------------------------------------------------------- | :----- | :----- | :----- |
+| Logs     | [All logs](https://www.warcraftlogs.com/zone/reports?zone=35&boss=2728&difficulty=0&class=Any&spec=Any&keystone=0&kills=2&duration=0)        | [Heroic log](https://www.warcraftlogs.com/reports/gVWC6Xpk7xfHTNqh#fight=9)        | [Heroic log](https://www.warcraftlogs.com/reports/WtMTXkYFZyHqGCbP#fight=8)        | [Mythic log](https://www.warcraftlogs.com/reports/z9JMT6LQ1AXaR8Fq#fight=9)        |
+| Videos | [Heroic guide video](https://www.youtube.com/watch?v=B8QoKhNqG78) | [Mythic testing video](https://www.youtube.com/watch?v=PqY_GnFDkAg) | [Mythic testing video](https://youtu.be/Xl-YWAjGuuM?si=CmH_CUPiwOT2SheU&t=679) | | 
+| Misc | [Raidplan](https://raidplan.io/plan/MG9uG8dshTIQQToV) | [One-sheet](https://questionablyepic.com/amirdrassil-the-dreams-hope-raid/council-of-dreams/) | |
+
+| Datum           | Description |
+| :-------------- | :---------- |
+| 1st potion      | On pull     |
+| 2nd potion      | On CD       |
+| Lust            | On pull     |
+| Utility talents | ?           |
+
+## Overview
+
+Council of Dreams is a single-phase rock-paper-scissors fight, where each boss has an "ultimate" ability they cast at full-energy that must be countered by another boss's ability.
+
+| Boss    | Ability      | Counter                |
+| :------ | :----------- | :--------------------- |
+| Aerwynn | [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) | Urctos's [Barreling Charge](https://www.wowhead.com/ptr-2/spell=420948/barreling-charge)        |
+| Urctos  | [Blind Rage](https://www.wowhead.com/ptr-2/spell=420525/blind-rage)       | Pip's [Polymorph Bomb](https://www.wowhead.com/ptr-2/spell=418591/polymorph-bomb)        |
+| Pip     | [Song of the Dragon](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon)    | Aerwynn's [Noxious Blossom](https://www.wowhead.com/ptr-2/spell=420671/noxious-blossom) |
+
+On Heroic, the bosses cast their ultimates in a fixed order one at a time, with the first ultimate cast at 0:55 and then every ~65 seconds thereafter.
+
+[See this Heroic log query](https://www.warcraftlogs.com/reports/k741GQNzj8VtMcHh#fight=11&type=casts&hostility=1&pins=2%24Off%24%23244F4B%24casts%241%240.0.0.Any%240.0.0.Any%24true%240.0.0.Any%24true%24421292%7C421029%7C420525%7C418591%7C420948&view=events) for more info.
+
+<Callout type="error">
+  All three bosses must die within 30(?) seconds of each other or they will ressurect at 50% health.
+
+  The timing is unconfirmed, but it's [at least 15 seconds](https://www.warcraftlogs.com/reports/j98gNWMmpq2X3BzQ#fight=16&type=casts&hostility=1&ability=418154&view=events) of leeway.
+</Callout>
+
+### Key mechanics
+
+- Tanks should try to keep Urctos on top of another boss to allow for cleave damage.
+  - DPS should generally target the non-Urctos boss that's stacked with Urctos.
+- Urctos's [Agonizing Claws](https://www.wowhead.com/ptr-2/spell=421020/agonizing-claws) deals massive physical damage in a frontal cone and applies a debuff that increases Claws damage taken.
+  - @tactic Tanks should keep Urctos facing away from raid.
+    - Tanks should generally swap after every [Barreling Charge](https://www.wowhead.com/ptr-2/spell=420948/barreling-charge), which allows an alternate A-B-B-A pattern of Claw soaks.  The exception is when Urctos has to get poly'd which may interrupt his Charge pattern.  [See this log query](https://www.warcraftlogs.com/reports/j98gNWMmpq2X3BzQ#fight=16&position=61036&type=casts&hostility=1&source=29&view=events&pins=2%24Off%24%23244F4B%24casts%241%240.0.0.Any%240.0.0.Any%24true%240.0.0.Any%24true%24421020%7C420948).
+- @critical @countdown Tanks should aim Urctos' [Barreling Charge](https://www.wowhead.com/ptr-2/spell=420948/barreling-charge) as needed, either toward Aerwynn to break [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket), or toward designated directions.
+  - [Thundering Impact](https://www.wowhead.com/ptr-2/spell=420966/thundering-impact) hits the tank at the end of the charge and deals scaling damage based on how many players soaked [Barreling Charge](https://www.wowhead.com/ptr-2/spell=420948/barreling-charge).  
+- @critical Aerwynn's [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) deals ramping damage and a slow to the entire raid.
+  - @tactic Step into a [Noxious Blossom](https://www.wowhead.com/ptr-2/spell=420671/noxious-blossom) puddle to remove the debuff.
+- @critical @countdown Pip's [Song of the Dragon](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon) is a 12-second channel that must be cleared afflicted players get [Captivating Finale](https://www.wowhead.com/ptr-2/spell=421032/captivating-finale), stunning them player and dealing moderate damage over 15 seconds
+  - @tactic The Song must be cleared by standing in a [Noxious Blossom](https://www.wowhead.com/ptr-2/spell=420671/noxious-blossom) puddle for a few seconds.
+- Each active [Noxious Blossom](https://www.wowhead.com/ptr-2/spell=420671/noxious-blossom) deals minor raid-wide damage every 3 seconds.
+  - @tactic Pip's [Polymorph Bomb](https://www.wowhead.com/ptr-2/spell=418591/polymorph-bomb) allows you to remove up to 3 [Noxious Blossom](https://www.wowhead.com/ptr-2/spell=420671/noxious-blossom) puddles without taking damage.  Polymorphed players should try to keep the number of active puddles relatively low to reduce raid damage.
+    - Once you've soaked your 3 puddles, **move away from the raid** to press your Preen button to safely break.
+- [Poisonous Javelin](https://www.wowhead.com/ptr-2/spell=420856/poisonous-javelin) is a stacking single-target DoT/snare.
+  - @tactic Healers should dispel ASAP.
+- @critical Pip's [Emerald Winds](https://www.wowhead.com/ptr-2/spell=421024/emerald-winds) deals moderate raid-wide damage and pushback over 3 seconds.
+  - @tactic Healers should use raid CDs to heal through this damage.
+
+## Strategy
+
+<Tabs items={['Urctos: Charge']}>
+  <Tabs.Tab>
+    Urctos casts [Barreling Charge](https://www.wowhead.com/ptr-2/spell=420948/barreling-charge) roughly every 30 seconds, which targets the current tank and charges toward them, dealing minor damage to every player Urctos passes through while also applying a [30-second debuff](https://ptr-2.wowhead.com/spell=423420) that increases Charge damage taken by 500%.
+
+    <Tactic full />
+
+    - Tanks should aim Urctos' [Barreling Charge](https://www.wowhead.com/ptr-2/spell=420948/barreling-charge) as needed, either toward Aerwynn to break [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket), or toward designated directions.
+    - Non-tank players should alternate soaking groups to stand in the charge path and take the damage, e.g.:
+      - Group A: All melee
+      - Group B: All ranged
+
+    <Callout>
+      There's a lot of movement throughout the fight to keep Urctos on top of one of the other bosses.  Therefore, tanks should communicate with the raid to ensure they're aiming the upcoming charge in the right direction.
+    </Callout>
+  </Tabs.Tab>
+</Tabs>
+
+### Mythic
+
+Bosses cast their ultimates in pairs, rather than one at a time. Individual bosses require at least 60 seconds to regain full energy and recast their ultimate. In general, this doesn't change how we handle the mechanics, but it does require prioritizing which ultimate is more important.
+
+Approximately every 65 seconds during the fight, two bosses will cast their ultimates at the same time ([see here](https://www.warcraftlogs.com/reports/j98gNWMmpq2X3BzQ#fight=16&position=193247&pins=2%24Off%24%23244F4B%24casts%241%240.0.0.Any%240.0.0.Any%24true%240.0.0.Any%24true%24421292%7C421029%7C420525%7C418591%7C420948&hostility=1&view=events&type=casts)).
+
+| Time | Ultimate A                                                                 | Ultimate B                                                                 | @Tactic                                  |
+| :--- | :------------------------------------------------------------------------- | :------------------------------------------------------------------------- | :--------------------------------------- |
+| 1:00 | [Aerwynn](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) | [Urctos](https://www.wowhead.com/ptr-2/spell=420525/blind-rage)            | Polymorph Urctos > Tank Charge Aerwynn   |
+| 2:05 | [Aerwynn](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) | [Pip](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon)       | Everyone in puddle > Tank Charge Aerwynn |
+| 3:10 | [Urctos](https://www.wowhead.com/ptr-2/spell=420525/blind-rage)            | [Pip](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon)       | Polymorph Urctos > Everyone in puddle    |
+| 4:15 | [Urctos](https://www.wowhead.com/ptr-2/spell=420525/blind-rage)            | [Aerwynn](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) | Polymorph Urctos > Tank Charge Aerwynn   |
+| 5:20 | [Pip](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon)       | [Aerwynn](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) | Everyone in puddle > Tank Charge Aerwynn |
+| 6:25 | [Pip](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon)       | [Urctos](https://www.wowhead.com/ptr-2/spell=420525/blind-rage)            | Polymorph Urctos > Everyone in puddle    |
+| 7:30 | [Aerwynn](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) | [Urctos](https://www.wowhead.com/ptr-2/spell=420525/blind-rage)            | Polymorph Urctos > Tank Charge Aerwynn   |
+
+The general order of importance is: [Blind Rage](https://www.wowhead.com/ptr-2/spell=420525/blind-rage) > [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) > [Song of the Dragon](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon).
+
+<Callout>
+While it's technically true that failing to clear [Song of the Dragon](https://www.wowhead.com/ptr-2/spell=421031/song-of-the-dragon) is the most impactful, it only affects the individual player that failed rather than the raid.  It'a also 12 seconds long with no notable impact until the end.  In general, Urctos' [Blind Rage](https://www.wowhead.com/ptr-2/spell=420525/blind-rage) should be Poly'd ASAP, so he is free to cast Charge on Aerwynn to break [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket).
+</Callout>
+
+<Callout type="warning">
+The combination of [Blind Rage](https://www.wowhead.com/ptr-2/spell=420525/blind-rage) and [Constricting Thicket](https://www.wowhead.com/ptr-2/spell=421292/constricting-thicket) is the most dangerous, as it requires "saving" the previous Polymorph to immediately break Urctos out of his Rage so he can charge Aerwynn.
+
+The exact timing is unknown, but it's possible a Polymorph may have to be passed back and forth to players for up to 20 seconds prior to the Urctos + Aerwynn ultimate pair.
+</Callout>
+
+- @critical Pip's [Emerald Winds](https://www.wowhead.com/ptr-2/spell=421024/emerald-winds) also spawns tornadoes during the cast, which deal moderate damage and knockback to players that touch them.
+  - @tactic Healers should still use raid CDs to heal through this damage and players should avoid tornadoes.
+- @countdown [Poisonous Javelin](https://www.wowhead.com/ptr-2/spell=420856/poisonous-javelin) dispel causes a 10-yard [Unstable Venom](https://www.wowhead.com/ptr-2/spell=423522/unstable-venom) explosion that deals massive damage to **other** players, but not to the dispelled player.
+  - @tactic Healers should dispel ASAP, but only once the target has moved away from others.
