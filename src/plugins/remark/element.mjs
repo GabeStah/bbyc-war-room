@@ -38,9 +38,18 @@ const mappings = [
     id: /@critical/gi,
     element: 'Critical'
   },
+
   {
     id: /@countdown/gi,
     element: 'Countdown'
+  },
+  {
+    id: /@dispel/gi,
+    element: 'Dispel'
+  },
+  {
+    id: /@interrupt/gi,
+    element: 'Interrupt'
   },
   {
     id: /@mythic/gi,

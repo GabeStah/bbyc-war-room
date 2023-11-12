@@ -1,0 +1,36 @@
+import { Tabs } from 'nextra/components';
+import { Callout } from 'nextra/components';
+import { Steps } from 'nextra/components';
+
+<Callout type="info">Check out [how to use this guide](/#how-to-use-this-guide) for help parsing the info on this page.</Callout>
+
+## Resources
+
+|  | Link                                                                 | Link B | Link C | Link D |
+| :------- | :------------------------------------------------------------------- | :----- | :----- | :----- |
+| Logs     | [All logs](https://www.warcraftlogs.com/zone/reports?zone=35&boss=2731&difficulty=0&class=Any&spec=Any&keystone=0&kills=2&duration=0)        | [Heroic log]()        | [Heroic log]()        | [Mythic log]()        |
+| Videos | [Heroic guide video](https://www.youtube.com/watch?v=23-Ky5MfyNk) | [Mythic testing video](https://www.youtube.com/watch?v=bg9lVMYWXuI) | [Mythic testing video](https://youtu.be/Xl-YWAjGuuM?si=0lmQahLIv1kR09O5&t=1867) | | 
+| Misc | [One-sheet](https://questionablyepic.com/amirdrassil-the-dreams-hope-raid/larodar/) | | |
+
+| Datum           | Description |
+| :-------------- | :---------- |
+| 1st potion      | ?           |
+| 2nd potion      | ?           |
+| Lust            | ?           |
+| Utility talents | ?           |
+
+## Overview
+
+
+### Key mechanics
+
+
+## Strategy
+
+<Tabs items={['']}>
+  <Tabs.Tab>
+
+  </Tabs.Tab>
+</Tabs>
+
+### Mythic

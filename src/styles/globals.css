@@ -6,6 +6,10 @@ ul ul {
   @apply !mt-1;
 }
 
+ul ul:last-child {
+  @apply !mb-4;
+}
+
 .death-knight {
   color: #C41F3B; /* Deep red */
 }

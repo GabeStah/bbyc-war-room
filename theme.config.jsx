@@ -7,6 +7,8 @@ import Mythic from './src/components/Mythic';
 import Tactic from './src/components/Tactic';
 import Tip from './src/components/Tip';
 import Image from 'next/image';
+import Interrupt from './src/components/Interrupt';
+import Dispel from './src/components/Dispel';
 
 /** @type {import('nextra').ThemeConfig} */
 const themeConfig = {
@@ -15,6 +17,8 @@ const themeConfig = {
     Class,
     Countdown,
     Critical,
+    Dispel,
+    Interrupt,
     Mythic,
     Role,
     Tactic,
